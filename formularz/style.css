@@ -205,7 +205,7 @@ body{
   100% { background-color: hsl(260, 49%, 99%); }
 }
 
-@keyframes fade1{
+@keyframes fade1{ 
     from{opacity: 1}
     to{opacity: 0}
 }

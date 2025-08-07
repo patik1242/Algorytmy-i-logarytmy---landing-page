@@ -27,14 +27,36 @@ sets.forEach(set => {
     }
 });
 
-document.getElementById("submit").addEventListener("click", function() {
+const usedEmails = [];
+
+
+function googleSheet(){
+    console.log("Funkcja została uruchomiona");
+
     let email = document.getElementById("email").value.trim();
-    if (email === "") {
-        alert("Podaj adres e-mail");
+    let email2 = document.getElementById("email");
+
+    const isInValid = 
+    email === "" || !email.includes("@") || !email.includes(".") || email.slice(0, email.indexOf("@")) === "" ||  
+    email.slice(email.lastIndexOf(".")+1) === "" || email.slice(email.indexOf("@")+1) === "";
+
+    if(isInValid){
+        alert("Podaj poprawny adres e-mail");
         return;
     }
 
-    let emailFieldName = "entry.2129708413"; 
+    if (usedEmails.includes(email2)){
+        alert("Ten adres został już podany!");
+        return;
+    }
+    
+    usedEmails.push(email2);
+
+    let emailFieldName = "entry.2129708413";
+
+    let greeting = document.getElementById("greeting");
+    let myP1 = document.getElementById("myP1");
+    let submit = document.getElementById("submit");
 
     fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLScOpRrpbpQysB558zskks6Zw8g9e-3SIrqrLmZLiaSpyjPkDw/formResponse", {
         method: "POST",
@@ -44,9 +66,16 @@ document.getElementById("submit").addEventListener("click", function() {
         },
         body: `${emailFieldName}=${encodeURIComponent(email)}`
     }).then(() => {
-        alert("Dziękujemy za zapis!");
-        document.getElementById("email").value = "";
+        greeting.textContent = "Dziękujemy za zapis!";
+        myP1.innerHTML = `Zapraszamy po więcej niespodzianek :)<br><br>
+        <img src = "images/media/facebook.png" style = "width: 15px; height: 15px;"> AlgorytmyIlogarytmy<br>
+        <img src = "images/media/instagram.png" style = "width: 15px; height: 15px;"> AlgorytmyIlogarytmy<br>
+        <img src = "images/media/tiktok.png" style = "width: 15px; height: 15px;"> AlgorytmyIlogarytmy<br>`;
+        email2.style.display = "none";
+        submit.style.display = "none";
+        console.log("Dziękujemy za zapis!");
     }).catch(err => {
+        greeting.textContent = "Błąd zapisu :( Spróbuj jeszcze raz";
         console.error("Błąd zapisu:", err);
     });
-});
+};
