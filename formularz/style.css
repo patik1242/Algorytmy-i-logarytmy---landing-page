@@ -9,6 +9,7 @@ body{
 }
 
 .container-wrapper {
+    position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -95,6 +96,7 @@ body{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 20px;
     background-color: hsl(262, 100%, 98%);
     width: 50%;
@@ -111,6 +113,7 @@ body{
     padding-top: 3px;
     height: auto;
     width: auto;
+    align-items: center;
 }
 
 .socials {
@@ -190,6 +193,17 @@ a{
 }
 #submit:hover{
     background-color: hsl(261, 100%, 94%);
+}
+
+.image{
+    background-image: url("images/logo/1.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    display: none;
+    margin-top: 10px;
 }
 
 .animation {
@@ -284,6 +298,10 @@ a{
 
   .background {
     background-size: cover;
+  }
+
+  .image{
+    display:block;
   }
 
   footer {
