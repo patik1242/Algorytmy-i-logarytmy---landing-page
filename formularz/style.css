@@ -93,9 +93,37 @@ body{
     border-top-right-radius: 80px;
     border-bottom-right-radius: 80px;
     animation: colorChange2 15s ease-in-out infinite alternate;
-
 }
 
+.footer{
+    background-color: hsl(260, 49%, 92%);
+    font-family:"Gloria Hallelujah", cursive,sans-serif;
+    color: hsl(260, 38%, 36%);
+    border-top: 1px solid hsl(260, 38%, 56%);
+    padding-top: 3px;
+    height: auto;
+    width: auto;
+}
+
+.socials {
+    text-align: center;
+    font-size: 15px;
+    gap: 20px;
+}
+
+a{
+    color: hsl(260, 38%, 56%);
+    text-decoration: none;
+}
+
+#contact, #documents, #cookies{
+    text-align: center;
+}
+
+#cookies{
+    font-size: 10px;
+    color: hsl(260, 49%, 72%)
+}
 #myP1{
     font-family:"Gloria Hallelujah", cursive, sans-serif;
     text-align: center;
@@ -154,16 +182,6 @@ body{
     background-color: hsl(261, 100%, 94%);
 }
 
-.footer{
-    background-color: hsl(260, 49%, 92%);
-    height: 50px;
-}
-
-#pfooter{
-    font-family:"Gloria Hallelujah", cursive,sans-serif;
-    color: hsl(260, 38%, 56%);
-}
-
 .animation {
     position: fixed;
     background-repeat: no-repeat;
@@ -184,10 +202,10 @@ body{
         opacity: 0;
     }
     10% {
-        opacity: 0.7; 
+        opacity: 0.8; 
     }
     50% {
-        opacity: 0.7; 
+        opacity: 0.8; 
     }
     100% {
         transform: translateY(-120vh) rotateZ(360deg); 

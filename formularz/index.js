@@ -29,7 +29,6 @@ sets.forEach(set => {
 
 const usedEmails = [];
 
-
 function googleSheet(){
     console.log("Funkcja została uruchomiona");
 
